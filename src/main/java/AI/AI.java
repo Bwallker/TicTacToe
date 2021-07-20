@@ -37,7 +37,7 @@ public class AI {
             this.randomFirstMove = false;
             return this.randomMove(player, board);
         }
-        Double randomDouble = this.random.nextDouble();
+        final double randomDouble = this.random.nextDouble();
         if (randomDouble < this.randomMoveChance) {
             return this.randomMove(player, board);
         }
