@@ -14,11 +14,11 @@ public class GUIApplication extends Application{
         URL url = new File("src/main/java/UI/GUILoader.fxml").toURI().toURL();
         FXMLLoader loader = new FXMLLoader(url);
         Parent root = loader.load();
-        Controller controller = loader.getController();
+        GameController gameController = loader.getController();
         primaryStage.setTitle("TicTacToe");
 
-        Scene scene = new Scene(root);
-        primaryStage.setScene(scene);
+        Scene launcherScene = new Scene(root);
+        primaryStage.setScene(launcherScene);
         primaryStage.show();
     }
 }

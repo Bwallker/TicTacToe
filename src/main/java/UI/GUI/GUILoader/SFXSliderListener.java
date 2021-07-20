@@ -4,12 +4,12 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 
 public class SFXSliderListener implements ChangeListener<Number> {
-    private Controller controller;
-    public SFXSliderListener(Controller controller) {
-        this.controller = controller;
+    private LauncherController launcherController;
+    public SFXSliderListener(LauncherController launcherController) {
+        this.launcherController = launcherController;
     }
     @Override
     public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
-        this.controller.sfxSliderChange();
+        this.launcherController.sfxSliderChange();
     }
 }

@@ -1,39 +1,41 @@
 package UI.GUI.GUILoader;
 import javafx.application.Application;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.event.EventType;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
-import javafx.scene.input.InputMethodTextRun;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.File;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class GUILoader extends Application{
+    private Stage primaryStage;
     @Override
     public void start(Stage primaryStage) throws Exception {
-        URL url = new File("src/main/java/UI/GUI/GUILoader/GUILoader.fxml").toURI().toURL();
-        String css = new File("src/main/java/UI/GUI/GUILoader/LoaderStyle.css").toURI().toURL().toString();
+        this.primaryStage = primaryStage;
+        URL url = new File("src/main/resources/GUILoader.fxml").toURI().toURL();
+        String css = new File("src/main/resources/LoaderStyle.css").toURI().toURL().toString();
+
+        Image icon = new Image(new File("src/main/resources/TicTacToe.png").toURI().toURL().toString());
+        primaryStage.getIcons().add(icon);
         System.out.println(css);
         FXMLLoader loader = new FXMLLoader(url);
         Parent root = loader.load();
-        Controller controller = loader.getController();
+        LauncherController launcherController = loader.getController();
+        launcherController.setLoader(this);
         primaryStage.setTitle("TicTacToe");
 
         Scene scene = new Scene(root);
+        primaryStage.resizableProperty().setValue(false);
         scene.getStylesheets().add(css);
         primaryStage.setScene(scene);
         primaryStage.show();
+    }
+
+
+    public Stage getPrimaryStage() {
+        return this.primaryStage;
     }
 
 }
