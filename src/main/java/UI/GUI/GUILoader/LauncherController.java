@@ -347,7 +347,7 @@ public class LauncherController implements Initializable {
                 1024, 768,
                 1280, 960,
                 1400, 1050,
-                1440, 1080 ,
+                1440, 1080,
                 1600, 1200,
                 1856, 1392,
                 1920, 1440,

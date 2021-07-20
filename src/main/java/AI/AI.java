@@ -21,7 +21,7 @@ public class AI {
         this.random = new Random();
         this.ui = ui;
         this.thisPlayer = thisPlayer;
-        this.otherPlayer = thisPlayer;
+        this.otherPlayer = otherPlayer;
         this.difficultyName = difficulty.toString();
     }
 
@@ -114,6 +114,8 @@ public class AI {
             return 2;
         }
         final boolean isThisPlayer = player.equals(this.thisPlayer);
+        System.out.println(player);
+        System.out.println(isThisPlayer);
         //defaults to Winner.DRAW. No need to check it separately
         int result = 0;
         if (winner == Winner.CROSS) {
@@ -138,12 +140,7 @@ public class AI {
 
     public int calculateScore(int depth, Board board, Player player) {
         final boolean isThisPlayer = player.equals(this.thisPlayer);
-        int best;
-        if (isThisPlayer) {
-            best = Integer.MIN_VALUE;
-        } else {
-            best = Integer.MAX_VALUE;
-        }
+        int best = isThisPlayer ? Integer.MIN_VALUE : Integer.MAX_VALUE;
         Symbol[][] boardOfSymbols = board.getBoard();
         Symbol[] firstRow = boardOfSymbols[0];
         final int columnLength = boardOfSymbols.length;
@@ -160,6 +157,7 @@ public class AI {
                 }
                 int score = minimax(depth + 1, this.otherPlayer(player), board);
                 board.undoMove(column, row);
+                best = isThisPlayer ? Math.max(best, score) : Math.min(best, score);
                 if (isThisPlayer) {
                     best = Math.max(best, score);
                 } else {
