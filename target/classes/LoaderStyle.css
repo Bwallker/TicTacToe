@@ -1,0 +1,26 @@
+.choice-box {
+    -fx-text-alignment: center;
+}
+
+#startGame {
+    -fx-background-color: green;
+    -fx-background-insets: 2 2 2 2, 2, 2, 2 !important;
+    -fx-font-size: 23px !important;
+    -fx-border-width: 2px !important;
+    -fx-border-color: transparent !important;
+    -fx-background-radius: 1px !important;
+}
+
+#startGame:disabled {
+    -fx-background-color: red !important;
+    -fx-background-radius: 0px !important;
+}
+
+#startGame:hover {
+    -fx-border-color:  #339933 !important;
+}
+
+#startGame:pressed {
+    -fx-background-color: blue !important;
+    -fx-border-color: #333399 !important;
+}
