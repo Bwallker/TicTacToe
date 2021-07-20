@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="442.0" prefWidth="498.0" style="-fx-background-color: #555555;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.GUI.GUILoader.Controller">
+    <children>
+        <Label layoutX="175.0" layoutY="65.0" text="Choose your settings:" textFill="#999999">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <CheckBox id="fullscreen" fx:id="fullscreen" alignment="CENTER" layoutX="65.0" layoutY="149.0" mnemonicParsing="false" style="-fx-font-weight: bold;" text="Enable fullscreen" textFill="WHITE" />
+      <ChoiceBox id="aspectRatios" fx:id="aspectRatios" layoutX="228.0" layoutY="145.0" prefHeight="25.0" prefWidth="66.0" />
+      <Label id="resolutionsText" fx:id="resolutionsText" layoutX="355.0" layoutY="120.0" style="-fx-font-weight: bold;" text="Pick a Resolution" textFill="WHITE" />
+      <ChoiceBox id="resolutions" fx:id="resolutions" layoutX="352.0" layoutY="145.0" prefHeight="25.0" prefWidth="102.0" />
+      <Label id="aspectRatiosText" fx:id="aspectRatiosText" layoutX="202.0" layoutY="120.0" prefHeight="17.0" prefWidth="117.0" style="-fx-font-weight: bold;" text="Pick an Aspect Ratio" textFill="WHITE" />
+      <Label fx:id="customResolutionLabel" layoutX="71.0" layoutY="188.0" style="-fx-font-weight: bold;" text="Custom resolution" textFill="WHITE" />
+      <TextField fx:id="widthField" layoutX="71.0" layoutY="219.0" prefHeight="25.0" prefWidth="104.0" />
+      <Label fx:id="customWidthLabel" layoutX="16.0" layoutY="223.0" style="-fx-font-weight: bold;" text="Width" textFill="WHITE" />
+      <TextField fx:id="heightField" layoutX="71.0" layoutY="256.0" prefHeight="25.0" prefWidth="104.0" />
+      <Label fx:id="customHeightLabel" layoutX="14.0" layoutY="260.0" style="-fx-font-weight: bold;" text="Height" textFill="WHITE" />
+      <Slider fx:id="musicSlider" layoutX="334.0" layoutY="225.0" prefHeight="14.0" prefWidth="104.0" />
+      <CheckBox fx:id="musicCheckbox" layoutX="207.0" layoutY="223.0" mnemonicParsing="false" style="-fx-font-weight: bold;" text="Music" textFill="WHITE" />
+      <Slider fx:id="sfxSlider" layoutX="334.0" layoutY="262.0" prefHeight="14.0" prefWidth="104.0" />
+      <CheckBox fx:id="sfxCheckbox" layoutX="207.0" layoutY="261.0" mnemonicParsing="false" style="-fx-font-weight: bold;" text="Sound Effects" textFill="WHITE" />
+      <Button fx:id="startGame" layoutX="96.0" layoutY="348.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="306.0" style="-fx-font-weight: bold;" text="START GAME!" textFill="WHITE">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+      <Label layoutX="178.0" layoutY="14.0" style="-fx-font-weight: bold;" text="TicTacToe">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <Label fx:id="heightError" layoutX="24.0" layoutY="313.0" style="-fx-font-weight: bold;" text="Your custom height is not valid!" textFill="RED" />
+      <Label fx:id="widthError" layoutX="26.0" layoutY="290.0" style="-fx-font-weight: bold;" text="Your custom width is not valid!" textFill="RED" />
+      <Label fx:id="sfxSliderPercentage" layoutX="461.0" layoutY="260.0" style="-fx-font-weight: bold;" text="0%" textFill="WHITE" />
+      <Label fx:id="musicSliderPercentage" layoutX="461.0" layoutY="224.0" style="-fx-font-weight: bold;" text="0%" textFill="WHITE" />
+    </children>
+</AnchorPane>
